@@ -80,7 +80,7 @@ A react-three-fiber ben [EffectComposer](https://docs.pmnd.rs/react-postprocessi
 Csak egy kis demo -val készültem a Szakdolgozat I. félévem végére, illetve a fentebb látható leírással.
 Az első autó modell nagyjából kész állapotba került, ezt bele is raktam az alkalmazásba.
 
-![](./docs/prototype_2023_06_20.png)
+![](./docs/prototype_2023_06_20.jpg)
 
 > Fontos megjegyezni, hogy még nem állítottam be a materialokat, egyik objektumra se, illetve nincsennek még összevonva különböző elemek.
 (Ennek eredménye a sok draw call)
