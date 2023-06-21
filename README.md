@@ -1,7 +1,7 @@
 # WebGL 3D Car Showcase
 Egy webalkalmazás 3D modellek realisztikus bemutatására
 
-- [Szakdolgozat tartalomjegyzék (vázlat)](#progress-report---20230620)
+- [Szakdolgozat tartalomjegyzék (vázlat)](#szakdolgozat-tartalomjegyzék)
 - [Progress Report - 2023.06.20](#progress-report---20230620)
 
 ### Setup
