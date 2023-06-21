@@ -1,6 +1,7 @@
 # WebGL 3D Car Showcase
 Egy webalkalmazás 3D modellek realisztikus bemutatására
 
+- [Szakdolgozat tartalomjegyzék (vázlat)](#progress-report---20230620)
 - [Progress Report - 2023.06.20](#progress-report---20230620)
 
 ### Setup
@@ -86,3 +87,43 @@ Az első autó modell nagyjából kész állapotba került, ezt bele is raktam a
 (Ennek eredménye a sok draw call)
 > Nincs beégetett árnyék és AO map.
 Későbbi munkák után lesz rendes grafikai megjelenése modellnek.
+
+---
+
+## Szakdolgozat tartalomjegyzék
+
+- Feladat leírása
+- Bevezetés
+- Tartalmi összefoglaló
+
+1. #### 3D grafika a weben
+   - WebGL előzmélnyei (Flash)
+   - WebGL működése és előnyei
+   - WebGPU (WebGL utódja)
+
+2. #### Megvalósításhoz használt technológiák
+   - Fejlesztői környezet (VSCode)
+   - Vite
+   - Three.js
+   - React Three Fiber
+   - Kód struktúra
+   - Blender
+  
+3. #### Fejlesztési folyamat
+   - Projekt létrehozás, előkészületek
+   - Kamera beállítása és tulajdonságok
+   - 3D modell betöltése
+   - Geometriák
+   - Materialok és textúrák
+   - Materialok felhasználása a modellen
+   - Környezet létrehozása, beállítsása
+   - Fények, árnyékok
+   - Post Processing Effektek
+   - Irányítás (Egér és billentyűzet eventek)
+   - Felhasználói felület (HTML  és WebGL)
+   - Optimalizálás
+   - Dinamikus betöltés
+
+4. #### Elkészült projekt
+   - Vercel hostolás
+   - Elért eredmény és felhasználás
