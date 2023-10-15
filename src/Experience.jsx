@@ -17,9 +17,9 @@ export default function Experience() {
 
         <Car />
 
-        <mesh receiveShadow position-y={ -0.15 } rotation-x={ - Math.PI * 0.5 } scale={ 3 }>
+{/*         <mesh receiveShadow position-y={ -0.15 } rotation-x={ - Math.PI * 0.5 } scale={ 3 }>
             <circleGeometry />
             <meshStandardMaterial color="orange" />
-        </mesh>
+        </mesh> */}
     </>
 }

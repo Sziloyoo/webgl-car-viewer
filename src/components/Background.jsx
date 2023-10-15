@@ -4,6 +4,13 @@ import { ACESFilmicToneMapping } from "three"
 export default function Background() {
 
     return <>
-        <Environment background near={1} far={1000} resolution={1024} files='./hdri/belfast_sunset_puresky_1k.hdr' blur={0.3} encoding={ACESFilmicToneMapping}/>
+        <Environment
+        background
+        /* ground={{ height: 32, radius: 130 }} */
+        files='./environment/old_depot_2k.hdr'
+        near={1}
+        far={1000}
+        resolution={2048}
+        blur={0.0}/>
     </>
 }
