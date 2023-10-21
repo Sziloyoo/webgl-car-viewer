@@ -3,6 +3,7 @@ import Tire from './materials/Tire.jsx'
 import Rim from './materials/Rim.jsx'
 import Chrome from './materials/Chrome.jsx'
 import RubberGray from './materials/RubberGray.jsx'
+import BrakeDisc from './materials/BrakeDisc.jsx'
 
 export default function Wheel(props) {
   const { nodes } = useGLTF('./glb/wheel.glb')
@@ -22,6 +23,10 @@ export default function Wheel(props) {
 
     <mesh geometry={ nodes.logo.geometry } position={props.position} rotation={props.rotation}>
       <RubberGray />
+    </mesh>
+
+    <mesh geometry={ nodes.brake.geometry } position={props.position} rotation={props.rotation}>
+      <BrakeDisc />
     </mesh>
   </>
 }

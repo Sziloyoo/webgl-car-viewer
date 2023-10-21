@@ -26,10 +26,6 @@ import Wheel from './Wheel.jsx'
 
 export default function Car() {
   const { nodes } = useGLTF('./glb/s2000.glb')
-  console.log(nodes.empty_front_wheel_left.rotation)
-  console.log(nodes.empty_front_wheel_right.rotation)
-  console.log(nodes.empty_back_wheel_left.rotation)
-  console.log(nodes.empty_back_wheel_right.rotation)
 
   return <>
     <mesh geometry={ nodes.body_blackbody.geometry }>
