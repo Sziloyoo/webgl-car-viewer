@@ -22,10 +22,14 @@ import FrontLightMatcap from './materials/FrontLightMatcap.jsx'
 import InteriorBlack from './materials/InteriorBlack.jsx'
 import InteriorPlastic from './materials/InteriorPlastic.jsx'
 import InteriorSeat from './materials/InteriorSeat.jsx'
+import Wheel from './Wheel.jsx'
 
 export default function Car() {
   const { nodes } = useGLTF('./glb/s2000.glb')
-  console.log(nodes)
+  console.log(nodes.empty_front_wheel_left.rotation)
+  console.log(nodes.empty_front_wheel_right.rotation)
+  console.log(nodes.empty_back_wheel_left.rotation)
+  console.log(nodes.empty_back_wheel_right.rotation)
 
   return <>
     <mesh geometry={ nodes.body_blackbody.geometry }>
@@ -119,5 +123,15 @@ export default function Car() {
     <mesh geometry={ nodes.interior_seat.geometry }>
       <InteriorSeat/>
     </mesh>
+
+    <mesh geometry={ nodes.body_brakeCalipers.geometry }>
+      <RubberGray/>
+    </mesh>
+
+    {/* Wheels */}
+    <Wheel position={nodes.empty_back_wheel_left.position} rotation={nodes.empty_back_wheel_left.rotation}/>
+    <Wheel position={nodes.empty_back_wheel_right.position} rotation={nodes.empty_back_wheel_right.rotation}/>
+    <Wheel position={nodes.empty_front_wheel_left.position} rotation={nodes.empty_front_wheel_left.rotation}/>
+    <Wheel position={nodes.empty_front_wheel_right.position} rotation={nodes.empty_front_wheel_right.rotation}/>
   </>
 }

@@ -12,14 +12,9 @@ export default function Experience() {
 
         <Background />
 
-        <directionalLight castShadow position={ [ 1, 2, 3 ] } intensity={ 1.5 } />
-        <ambientLight intensity={ 0.5 } />
+        <directionalLight position={ [ 1, 2, 3 ] } intensity={ 1.0 } />
+        <ambientLight intensity={ 0.25 } />
 
         <Car />
-
-{/*         <mesh receiveShadow position-y={ -0.15 } rotation-x={ - Math.PI * 0.5 } scale={ 3 }>
-            <circleGeometry />
-            <meshStandardMaterial color="orange" />
-        </mesh> */}
     </>
 }
