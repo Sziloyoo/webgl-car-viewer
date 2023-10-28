@@ -1,19 +1,33 @@
 import { folder, useControls } from 'leva'
-import { MeshTransmissionMaterial } from '@react-three/drei'
 
 export default function Window() {
-    const settings = useControls('materials', {
+    const {transmission, roughness, color, ior, reflectivity} = useControls('materials', {
         'window': folder({
-            samples: { value: 8, min: 1, max: 16, step: 1 },
-            transmission: { value: 1, min: 0, max: 1 },
-            roughness: { value: 0.05, min: 0, max: 1, step: 0.01 },
-            thickness: { value: 0.03, min: 0, max: 4, step: 0.01 },
-            ior: { value: 1.5, min: 1, max: 5, step: 0.01 },
-            chromaticAberration: { value: 0.06, min: 0, max: 1 },
-            distortion: { value: 0.0, min: 0, max: 1, step: 0.01 },
-            distortionScale: { value: 0.3, min: 0.01, max: 1, step: 0.01 },
-            clearcoat: { value: 1, min: 0, max: 1 },
-            color: '#ffffff'
+            color: '#ffffff',
+            roughness:{
+                value: 0.03,
+                min: 0,
+                max: 1,
+                step: 0.01
+            },
+            transmission:{
+                value: 0.95,
+                min: 0,
+                max: 1,
+                step: 0.01
+            },
+            ior:{
+                value: 1.5,
+                min: 1.0,
+                max: 2.33,
+                step: 0.01
+            },
+            reflectivity:{
+                value: 1.0,
+                min: 0.0,
+                max: 1.00,
+                step: 0.01
+            }
         }, {
             collapsed: false
         })
@@ -21,5 +35,11 @@ export default function Window() {
         collapsed: false
     })
 
-    return <MeshTransmissionMaterial {...settings}/>
+    return <meshPhysicalMaterial
+        transparent= { true }
+        transmission={ transmission }
+        ior={ ior }
+        reflectivity={ reflectivity }
+        color={ color }
+        roughness={ roughness }/>
 }

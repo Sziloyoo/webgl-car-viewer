@@ -28,7 +28,7 @@ export default function Car() {
   const { nodes } = useGLTF('./glb/s2000.glb')
 
   return <>
-    <mesh geometry={ nodes.body_blackbody.geometry }>
+    <mesh geometry={ nodes.body_blackbody.geometry } >
       <BlackBody/>
     </mesh>
 
