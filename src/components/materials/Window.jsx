@@ -1,11 +1,11 @@
 import { folder, useControls } from 'leva'
 
 export default function Window() {
-    const {roughness, color, transmission, ior, reflectivity} = useControls('materials', {
+    const {transmission, roughness, color, ior, reflectivity} = useControls('materials', {
         'window': folder({
             color: '#ffffff',
             roughness:{
-                value: 0.3,
+                value: 0.03,
                 min: 0,
                 max: 1,
                 step: 0.01
@@ -36,11 +36,11 @@ export default function Window() {
     })
 
     return <meshPhysicalMaterial
-        transparent= { true }
+        transparent = { true }
         transmission={ transmission }
-        ior = { ior }
+        ior={ ior }
+        reflectivity={ reflectivity }
         color={ color }
         roughness={ roughness }
-        reflectivity={ reflectivity }
-        />
+  />
 }

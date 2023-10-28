@@ -8,7 +8,7 @@ export default function Experience() {
     return <>
         <Perf position="top-left" />
 
-        <OrbitControls makeDefault />
+        <OrbitControls enablePan={false} minPolarAngle={0} maxPolarAngle={Math.PI / 2.25} makeDefault />
 
         <Background />
 
