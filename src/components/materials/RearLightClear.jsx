@@ -2,33 +2,9 @@ import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 
 export default function RearLightClear() {
-    const { color, transmission, ior, reflectivity, roughness } = useControls('materials', {
+    const { color } = useControls('materials', {
         'rearLightClear': folder({
-            color: '#ffffff',
-            roughness:{
-                value: 0.12,
-                min: 0,
-                max: 1,
-                step: 0.01
-            },
-            transmission:{
-                value: 0.9,
-                min: 0,
-                max: 1,
-                step: 0.01
-            },
-            ior:{
-                value: 1.5,
-                min: 1.0,
-                max: 2.33,
-                step: 0.01
-            },
-            reflectivity:{
-                value: 1.0,
-                min: 0.0,
-                max: 1.00,
-                step: 0.01
-            }
+            color: '#ffffff'
             
         }, {
             collapsed: false
@@ -38,14 +14,11 @@ export default function RearLightClear() {
     })
 
     const normal = useTexture('./textures/back_light_normal.png')
+    const matcapTexture = useTexture('./textures/matcap.png')
     normal.flipY = false
 
-    return <meshPhysicalMaterial
-        transparent= { true }
-        transmission={ transmission }
-        ior={ ior }
-        reflectivity={ reflectivity }
-        color={ color }
-        roughness={ roughness }
-        normalMap={ normal }/>
+    return <meshMatcapMaterial
+    color={ color }
+    matcap={ matcapTexture }
+    normalMap={ normal }/>
 }

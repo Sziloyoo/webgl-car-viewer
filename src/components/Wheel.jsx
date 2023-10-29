@@ -7,7 +7,7 @@ import BrakeDisc from './materials/BrakeDisc.jsx'
 
 export default function Wheel(props) {
   const { nodes } = useGLTF('./glb/wheel.glb')
-
+  
   return <>
     <mesh geometry={ nodes.tire.geometry } position={props.position} rotation={props.rotation}>
       <Tire />

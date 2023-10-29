@@ -4,7 +4,7 @@ import { folder, useControls } from 'leva'
 export default function Shadow() {
     const { color, opacity } = useControls('materials', {
         'shadow': folder({
-            color: '#ffffff',
+            color: '#000000',
             opacity:{
                 value: 1.0,
                 min: 0,

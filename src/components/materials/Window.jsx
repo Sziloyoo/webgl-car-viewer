@@ -5,13 +5,13 @@ export default function Window() {
         'window': folder({
             color: '#ffffff',
             roughness:{
-                value: 0.03,
+                value: 0.025,
                 min: 0,
                 max: 1,
                 step: 0.01
             },
             transmission:{
-                value: 0.85,
+                value: 1.0,
                 min: 0,
                 max: 1,
                 step: 0.01
