@@ -23,7 +23,6 @@ export default function Background() {
                 max: 128,
                 step: 1
             }
-
         }, {
             collapsed: false
         })
@@ -40,10 +39,6 @@ export default function Background() {
             scale: scale
         } }
         files='./environment/sunrise_2k.hdr'
-        near={1}
-        far={1000}
-        resolution={2048}
-        blur={0.0}
         />
     </>
 }

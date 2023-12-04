@@ -24,33 +24,24 @@ import InteriorPlastic from './materials/InteriorPlastic.jsx'
 import InteriorSeat from './materials/InteriorSeat.jsx'
 import Wheel from './Wheel.jsx'
 
-export default function Car(props) {
+export default function Car() {
   const { nodes } = useGLTF('./glb/s2000.glb')
-  const position_offset_y = props.position_offset_y
 
-  return <>
+  return <group position={[0, .14, 0]}>
     {/* Body */}
-    <mesh geometry={ nodes.body_blackbody.geometry }
-          position-y={position_offset_y}
-          >
+    <mesh geometry={ nodes.body_blackbody.geometry }>
       <BlackBody/>
     </mesh>
 
-    <mesh geometry={ nodes.body_carpaint.geometry }
-          position-y={position_offset_y}
-          >
+    <mesh geometry={ nodes.body_carpaint.geometry }>
       <Carpaint/>
     </mesh>
 
-    <mesh geometry={ nodes.body_chrome.geometry }
-          position-y={position_offset_y}
-          >
+    <mesh geometry={ nodes.body_chrome.geometry }>
       <Chrome/>
     </mesh>
 
-    <mesh geometry={ nodes.body_lightGlass.geometry }
-          position-y={position_offset_y}
-          >
+    <mesh geometry={ nodes.body_lightGlass.geometry }>
       <LightGlass/>
     </mesh>
     
@@ -58,79 +49,79 @@ export default function Car(props) {
       <FrontLightClear/>
     </mesh>
 
-    <mesh geometry={ nodes.body_frontLightMatcap.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_frontLightMatcap.geometry } >
       <FrontLightMatcap/>
     </mesh>
     
-    <mesh geometry={ nodes.body_indicatorLights.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_indicatorLights.geometry } >
       <TurnSignalSide/>
     </mesh>
     
-    <mesh geometry={ nodes.body_licensePlate.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_licensePlate.geometry } >
       <LicensePlate/>
     </mesh>
 
-    <mesh geometry={ nodes.body_lightLines.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_lightLines.geometry } >
       <LightLines/>
     </mesh>
 
-    <mesh geometry={ nodes.body_lightsReflective.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_lightsReflective.geometry } >
       <LightsReflective/>
     </mesh>
 
-    <mesh geometry={ nodes.body_mirror.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_mirror.geometry } >
       <Mirror/>
     </mesh>
 
-    <mesh geometry={ nodes.body_plastic.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_plastic.geometry } >
       <Plastic/>
     </mesh>
     
-    <mesh geometry={ nodes.body_rearLightClear.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_rearLightClear.geometry } >
       <RearLightClear/>
     </mesh>
 
-    <mesh geometry={ nodes.body_rearLightRed.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_rearLightRed.geometry } >
       <RearLightRed/>
     </mesh>
 
-    <mesh geometry={ nodes.body_roof.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_roof.geometry } >
       <Roof/>
     </mesh>
 
-    <mesh geometry={ nodes.body_rubberBlack.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_rubberBlack.geometry } >
       <RubberBlack/>
     </mesh>
 
-    <mesh geometry={ nodes.body_rubberGray.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_rubberGray.geometry } >
       <RubberGray/>
     </mesh>
 
-    <mesh geometry={ nodes.body_window.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_window.geometry } >
       <Window/>
     </mesh>
 
-    <mesh geometry={ nodes.body_tailLight.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_tailLight.geometry } >
       <TailLight/>
     </mesh>
 
-    <mesh geometry={ nodes.body_shadowCatcher.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_shadowCatcher.geometry } >
       <Shadow/>
     </mesh>
 
-    <mesh geometry={ nodes.interior_black.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.interior_black.geometry } >
       <InteriorBlack/>
     </mesh>
 
-    <mesh geometry={ nodes.interior_platic.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.interior_platic.geometry } >
       <InteriorPlastic/>
     </mesh>
 
-    <mesh geometry={ nodes.interior_seat.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.interior_seat.geometry } >
       <InteriorSeat/>
     </mesh>
 
-    <mesh geometry={ nodes.body_brakeCalipers.geometry } position-y={position_offset_y}>
+    <mesh geometry={ nodes.body_brakeCalipers.geometry } >
       <RubberGray/>
     </mesh>
 
@@ -139,5 +130,5 @@ export default function Car(props) {
     <Wheel position={nodes.empty_back_wheel_right.position} rotation={nodes.empty_back_wheel_right.rotation} />
     <Wheel position={nodes.empty_front_wheel_left.position} rotation={nodes.empty_front_wheel_left.rotation} />
     <Wheel position={nodes.empty_front_wheel_right.position} rotation={nodes.empty_front_wheel_right.rotation} />
-  </>
+  </group>
 }
