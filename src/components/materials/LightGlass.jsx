@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function LightGlass() {
+export default function LightGlass(props) {
     const {transmission, roughness, color, ior, reflectivity} = useControls('materials', {
         'lightGlass': folder({
             color: '#ffffff',
@@ -42,5 +42,6 @@ export default function LightGlass() {
     reflectivity={ reflectivity }
     color={ color }
     roughness={ roughness }
+    envMapIntensity={props.envMapIntensity}
 />
 }

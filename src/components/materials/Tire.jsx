@@ -2,7 +2,7 @@ import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 import * as THREE from 'three'
 
-export default function Tire() {
+export default function Tire(props) {
     const { color, roughness, normalScale } = useControls('materials', {
         'tire': folder({
             color: '#cbcbcb',
@@ -35,5 +35,6 @@ export default function Tire() {
         map={ tireColor }
         roughness={ roughness }
         normalMap={ tireNormal }
-        normalScale={ normalScale }/>
+        normalScale={ normalScale }
+        envMapIntensity={props.envMapIntensity}/>
 }

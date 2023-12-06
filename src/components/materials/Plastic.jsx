@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Plastic() {
+export default function Plastic(props) {
     const { color, roughness } = useControls('materials', {
         'plastic': folder({
             color: '#1D1D1D',
@@ -20,5 +20,6 @@ export default function Plastic() {
 
     return <meshStandardMaterial
         color={ color }
-        roughness={ roughness }/>
+        roughness={ roughness }
+        envMapIntensity={props.envMapIntensity}/>
 }

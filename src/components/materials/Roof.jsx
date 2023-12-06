@@ -2,7 +2,7 @@ import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 import * as THREE from 'three'
 
-export default function Roof() {
+export default function Roof(props) {
     const { color, roughness, normalScale } = useControls('materials', {
         'roof': folder({
             color: '#1D1D1D',
@@ -34,5 +34,6 @@ export default function Roof() {
         color={ color }
         roughness={ roughness }
         normalMap={ roofNormal }
-        normalScale={ normalScale }/>
+        normalScale={ normalScale }
+        envMapIntensity={props.envMapIntensity}/>
 }

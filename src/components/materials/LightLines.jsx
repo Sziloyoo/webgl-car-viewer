@@ -4,7 +4,7 @@ export default function LightLines() {
     const { opacity } = useControls('materials', {
         'lightLines': folder({
             opacity:{
-                value: 0.25,
+                value: 1.0,
                 min: 0,
                 max: 1,
                 step: 0.01
@@ -17,7 +17,7 @@ export default function LightLines() {
         collapsed: false
     })
 
-    return <meshStandardMaterial
+    return <meshLambertMaterial
         color="white"
         transparent={ true }
         opacity={ opacity }/>

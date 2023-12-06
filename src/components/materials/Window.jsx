@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Window() {
+export default function Window(props) {
     const {transmission, roughness, color, ior, reflectivity} = useControls('materials', {
         'window': folder({
             color: '#ffffff',
@@ -42,5 +42,6 @@ export default function Window() {
         reflectivity={ reflectivity }
         color={ color }
         roughness={ roughness }
+        envMapIntensity={props.envMapIntensity}
   />
 }

@@ -1,7 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 
-export default function TailLight() {
+export default function TailLight(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'tailLight': folder({
             color: '#ffffff',
@@ -31,5 +31,6 @@ export default function TailLight() {
         color={ color }
         map={ turnSignalColor }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

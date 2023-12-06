@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Mirror() {
+export default function Mirror(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'mirror': folder({
             color: '#f1fbff',
@@ -27,5 +27,6 @@ export default function Mirror() {
     return <meshStandardMaterial
         color={ color }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

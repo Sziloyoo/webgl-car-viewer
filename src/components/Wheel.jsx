@@ -10,23 +10,23 @@ export default function Wheel(props) {
   
   return <>
     <mesh geometry={ nodes.tire.geometry } position={props.position} rotation={props.rotation}>
-      <Tire />
+      <Tire envMapIntensity={props.envMapIntensity}/>
     </mesh>
 
     <mesh geometry={ nodes.rim.geometry } position={props.position} rotation={props.rotation}>
-      <Rim />
+      <Rim envMapIntensity={props.envMapIntensity}/>
     </mesh>
 
     <mesh geometry={ nodes.nuts.geometry } position={props.position} rotation={props.rotation}>
-      <Chrome />
+      <Chrome envMapIntensity={props.envMapIntensity}/>
     </mesh>
 
     <mesh geometry={ nodes.logo.geometry } position={props.position} rotation={props.rotation}>
-      <RubberGray />
+      <RubberGray envMapIntensity={props.envMapIntensity}/>
     </mesh>
 
     <mesh geometry={ nodes.brake.geometry } position={props.position} rotation={props.rotation}>
-      <BrakeDisc />
+      <BrakeDisc envMapIntensity={props.envMapIntensity}/>
     </mesh>
   </>
 }

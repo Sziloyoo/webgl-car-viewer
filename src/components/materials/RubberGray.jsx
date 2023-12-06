@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function RubberGray() {
+export default function RubberGray(props) {
     const { color, roughness } = useControls('materials', {
         'rubberGray': folder({
             color: '#2C2C2C',
@@ -20,5 +20,6 @@ export default function RubberGray() {
 
     return <meshStandardMaterial
         color={ color }
-        roughness={ roughness }/>
+        roughness={ roughness }
+        envMapIntensity={props.envMapIntensity}/>
 }

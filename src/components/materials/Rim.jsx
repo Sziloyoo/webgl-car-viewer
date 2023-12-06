@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Rim() {
+export default function Rim(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'rim': folder({
             color: '#cecece',
@@ -27,5 +27,6 @@ export default function Rim() {
     return <meshStandardMaterial
         color={ color }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

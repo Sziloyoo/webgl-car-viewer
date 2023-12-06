@@ -1,7 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 
-export default function TurnSignalSide() {
+export default function TurnSignalSide(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'turnSignalSide': folder({
             color: '#ffffff',
@@ -33,5 +33,6 @@ export default function TurnSignalSide() {
         map={ turnSignalColor }
         normalMap={ turnSignalNormal }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

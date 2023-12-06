@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Carpaint() {
+export default function Carpaint(props) {
     const { color, roughness, metalness, clearcoat, clearcoatRoughness } = useControls('materials', {
         'carpaint': folder({
             color: '#ff0000',
@@ -41,5 +41,7 @@ export default function Carpaint() {
         roughness={ roughness }
         metalness={ metalness }
         clearcoat={ clearcoat }
-        clearcoatRoughness={ clearcoatRoughness }/>
+        clearcoatRoughness={ clearcoatRoughness }
+        envMapIntensity={props.envMapIntensity}
+        />
 }

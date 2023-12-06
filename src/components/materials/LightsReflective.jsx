@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function LightsReflective() {
+export default function LightsReflective(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'lightsReflective': folder({
             color: '#d4d4d4',
@@ -27,5 +27,6 @@ export default function LightsReflective() {
     return <meshStandardMaterial
         color={ color }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

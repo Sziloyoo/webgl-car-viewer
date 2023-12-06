@@ -1,6 +1,6 @@
 import { folder, useControls } from 'leva'
 
-export default function Chrome() {
+export default function Chrome(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'chrome': folder({
             color: '#cecece',
@@ -27,5 +27,6 @@ export default function Chrome() {
     return <meshStandardMaterial
         color={ color }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }

@@ -1,7 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 
-export default function BrakeDisc() {
+export default function BrakeDisc(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'brakeDisc': folder({
             color: '#ffffff',
@@ -31,5 +31,6 @@ export default function BrakeDisc() {
         color={ color }
         map={ textureMap }
         roughness={ roughness }
-        metalness={ metalness }/>
+        metalness={ metalness }
+        envMapIntensity={props.envMapIntensity}/>
 }
