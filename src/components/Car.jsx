@@ -23,112 +23,117 @@ import InteriorBlack from './materials/InteriorBlack.jsx'
 import InteriorPlastic from './materials/InteriorPlastic.jsx'
 import InteriorSeat from './materials/InteriorSeat.jsx'
 import Wheel from './Wheel.jsx'
+import PlasticWhite from './materials/PlasticWhite.jsx'
 
 export default function Car(props) {
-  const { nodes } = useGLTF('./glb/s2000.glb')
+  const { nodes } = useGLTF('./glb/' + props.model + '/body.glb')
 
   return <group position={[0, .14, 0]}>
     {/* Body */}
-    <mesh geometry={ nodes.body_blackbody.geometry }>
+    {nodes.body_blackbody && <mesh geometry={ nodes.body_blackbody.geometry }>
       <BlackBody />
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_carpaint.geometry }>
+    {nodes.body_carpaint && <mesh geometry={ nodes.body_carpaint.geometry }>
       <Carpaint envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_chrome.geometry }>
+    {nodes.body_chrome.geometry && <mesh geometry={ nodes.body_chrome.geometry }>
       <Chrome envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_lightGlass.geometry }>
+    {nodes.body_lightGlass && <mesh geometry={ nodes.body_lightGlass.geometry }>
       <LightGlass envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
     
-    <mesh geometry={ nodes.body_frontLightClear.geometry } >
+    {nodes.body_frontLightClear && <mesh geometry={ nodes.body_frontLightClear.geometry } >
       <FrontLightClear envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_frontLightMatcap.geometry } >
+    {nodes.body_frontLightMatcap && <mesh geometry={ nodes.body_frontLightMatcap.geometry } >
       <FrontLightMatcap />
-    </mesh>
+    </mesh>}
     
-    <mesh geometry={ nodes.body_indicatorLights.geometry } >
+    {nodes.body_indicatorLights && <mesh geometry={ nodes.body_indicatorLights.geometry } >
       <TurnSignalSide envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
     
-    <mesh geometry={ nodes.body_licensePlate.geometry } >
+    {nodes.body_licensePlate && <mesh geometry={ nodes.body_licensePlate.geometry } >
       <LicensePlate/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_lightLines.geometry } >
+    {nodes.body_lightLines && <mesh geometry={ nodes.body_lightLines.geometry } >
       <LightLines/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_lightsReflective.geometry } >
+    {nodes.body_lightsReflective && <mesh geometry={ nodes.body_lightsReflective.geometry } >
       <LightsReflective envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_mirror.geometry } >
+    {nodes.body_mirror && <mesh geometry={ nodes.body_mirror.geometry } >
       <Mirror envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_plastic.geometry } >
+    {nodes.body_plastic && <mesh geometry={ nodes.body_plastic.geometry } >
       <Plastic envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
     
-    <mesh geometry={ nodes.body_rearLightClear.geometry } >
+    {nodes.body_rearLightClear && <mesh geometry={ nodes.body_rearLightClear.geometry } >
       <RearLightClear envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_rearLightRed.geometry } >
+    {nodes.body_rearLightRed && <mesh geometry={ nodes.body_rearLightRed.geometry } >
       <RearLightRed envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_roof.geometry } >
+    {nodes.body_roof && <mesh geometry={ nodes.body_roof.geometry } >
       <Roof envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_rubberBlack.geometry } >
+    {nodes.body_rubberBlack && <mesh geometry={ nodes.body_rubberBlack.geometry } >
       <RubberBlack envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_rubberGray.geometry } >
+    {nodes.body_rubberGray && <mesh geometry={ nodes.body_rubberGray.geometry } >
       <RubberGray envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_window.geometry } >
+    {nodes.body_window && <mesh geometry={ nodes.body_window.geometry } >
       <Window envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_tailLight.geometry } >
+    {nodes.body_tailLight && <mesh geometry={ nodes.body_tailLight.geometry } >
       <TailLight envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_shadowCatcher.geometry } >
+    {nodes.body_shadowCatcher && <mesh geometry={ nodes.body_shadowCatcher.geometry } >
       <Shadow/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.interior_black.geometry } >
+    {nodes.interior_black && <mesh geometry={ nodes.interior_black.geometry } >
       <InteriorBlack envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.interior_platic.geometry } >
+    {nodes.interior_platic && <mesh geometry={ nodes.interior_platic.geometry } >
       <InteriorPlastic envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.interior_seat.geometry } >
+    {nodes.interior_seat && <mesh geometry={ nodes.interior_seat.geometry } >
       <InteriorSeat envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
-    <mesh geometry={ nodes.body_brakeCalipers.geometry } >
+    {nodes.body_brakeCalipers && <mesh geometry={ nodes.body_brakeCalipers.geometry } >
       <RubberGray envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
+
+    {nodes.body_plasticWhite && <mesh geometry={ nodes.body_plasticWhite.geometry } >
+      <PlasticWhite envMapIntensity={props.envMapIntensity}/>
+    </mesh>}
 
     {/* Wheels */}
-    <Wheel position={nodes.empty_back_wheel_left.position} rotation={nodes.empty_back_wheel_left.rotation} envMapIntensity={props.envMapIntensity}/>
-    <Wheel position={nodes.empty_back_wheel_right.position} rotation={nodes.empty_back_wheel_right.rotation} envMapIntensity={props.envMapIntensity}/>
-    <Wheel position={nodes.empty_front_wheel_left.position} rotation={nodes.empty_front_wheel_left.rotation} envMapIntensity={props.envMapIntensity}/>
-    <Wheel position={nodes.empty_front_wheel_right.position} rotation={nodes.empty_front_wheel_right.rotation} envMapIntensity={props.envMapIntensity}/>
+    <Wheel position={nodes.empty_back_wheel_left.position} rotation={nodes.empty_back_wheel_left.rotation} envMapIntensity={props.envMapIntensity} model={props.model}/>
+    <Wheel position={nodes.empty_back_wheel_right.position} rotation={nodes.empty_back_wheel_right.rotation} envMapIntensity={props.envMapIntensity} model={props.model}/>
+    <Wheel position={nodes.empty_front_wheel_left.position} rotation={nodes.empty_front_wheel_left.rotation} envMapIntensity={props.envMapIntensity} model={props.model}/>
+    <Wheel position={nodes.empty_front_wheel_right.position} rotation={nodes.empty_front_wheel_right.rotation} envMapIntensity={props.envMapIntensity} model={props.model}/>
   </group>
 }

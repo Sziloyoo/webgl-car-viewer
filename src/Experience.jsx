@@ -26,6 +26,6 @@ export default function Experience() {
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ dirLightStrength } />
         <ambientLight intensity={ ambientStrength } />
 
-        <Car envMapIntensity={envMapIntensity}/>
+        <Car envMapIntensity={envMapIntensity} model="civic"/>
     </>
 }

@@ -6,7 +6,7 @@ import RubberGray from './materials/RubberGray.jsx'
 import BrakeDisc from './materials/BrakeDisc.jsx'
 
 export default function Wheel(props) {
-  const { nodes } = useGLTF('./glb/wheel.glb')
+  const { nodes } = useGLTF('./glb/' + props.model + '/wheel.glb')
   
   return <>
     <mesh geometry={ nodes.tire.geometry } position={props.position} rotation={props.rotation}>
@@ -21,9 +21,9 @@ export default function Wheel(props) {
       <Chrome envMapIntensity={props.envMapIntensity}/>
     </mesh>
 
-    <mesh geometry={ nodes.logo.geometry } position={props.position} rotation={props.rotation}>
+    {nodes.logo && <mesh geometry={ nodes.logo.geometry } position={props.position} rotation={props.rotation}>
       <RubberGray envMapIntensity={props.envMapIntensity}/>
-    </mesh>
+    </mesh>}
 
     <mesh geometry={ nodes.brake.geometry } position={props.position} rotation={props.rotation}>
       <BrakeDisc envMapIntensity={props.envMapIntensity}/>
