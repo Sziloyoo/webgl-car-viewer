@@ -20,7 +20,7 @@ export default function Experience() {
 
         {/* <Background /> */}
 
-        <Environment background="false" files="./environment/studio.hdr"/>
+        <Environment background files="./environment/studio.hdr"/>
         <Studio />
 
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ dirLightStrength } />

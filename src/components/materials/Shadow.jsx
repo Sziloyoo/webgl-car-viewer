@@ -1,7 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import { folder, useControls } from 'leva'
 
-export default function Shadow() {
+export default function Shadow(props) {
     const { color, opacity } = useControls('materials', {
         'shadow': folder({
             color: '#000000',
@@ -19,8 +19,8 @@ export default function Shadow() {
         collapsed: false
     })
 
-    const shadowColor = useTexture('./textures/shadow_color.png')
-    const shadowAlpha = useTexture('./textures/shadow_opacity.png')
+    const shadowColor = useTexture('./textures/' + props.model +'/shadow_color.png')
+    const shadowAlpha = useTexture('./textures/' + props.model +'/shadow_opacity.png')
 
     shadowColor.flipY = false
     shadowAlpha.flipY = false

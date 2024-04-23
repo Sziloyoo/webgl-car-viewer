@@ -107,7 +107,7 @@ export default function Car(props) {
     </mesh>}
 
     {nodes.body_shadowCatcher && <mesh geometry={ nodes.body_shadowCatcher.geometry } >
-      <Shadow/>
+      <Shadow model={props.model}/>
     </mesh>}
 
     {nodes.interior_black && <mesh geometry={ nodes.interior_black.geometry } >
