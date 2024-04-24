@@ -1,4 +1,4 @@
-# WebGL 3D Car Showcase
+# Interaktív 3D Technológiák a Weben: Dinamikus Modell Megjelenítő Fejlesztése React Three Fiberrel
 Egy webalkalmazás 3D modellek realisztikus bemutatására
 
 ### [`ZFTPNS`] Pullai Szilárd - Üzemmérnök-Informatikus BProf ###
