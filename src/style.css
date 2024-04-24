@@ -10,18 +10,8 @@ body,
     background: ivory;
 }
 
-.interface{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
 .title{
     position: absolute;
-    /* top: 15%; */
     left: 0;
     width: 100%;
     color: aliceblue;
@@ -30,3 +20,19 @@ body,
     padding-top: 5px;
     text-align: center;
 }
+
+.dropdown-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px; /* Adjust padding as needed for exact positioning */
+  }
+  
+  select {
+    min-width: 120px; /* Ensure the dropdown is not too small */
+  }
+  

@@ -5,12 +5,10 @@ import Experience from './Experience.jsx'
 import { StrictMode } from 'react'
 import Interface from './Interface.jsx'
 
-const root = ReactDOM.createRoot(document.querySelector('#root'))
-
-root.render(
+const root = ReactDOM.createRoot(document.querySelector('#root')).render(
     <StrictMode>
         <Canvas
-            gl={{ sortObjects: true }}
+            gl
             camera={{
                 fov: 45,
                 near: 0.1,

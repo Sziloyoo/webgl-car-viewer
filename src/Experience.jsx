@@ -4,8 +4,11 @@ import Background from './components/Background.jsx'
 import Car from './components/Car.jsx'
 import Studio from './components/Studio.jsx'
 import { useControls } from 'leva'
+import useStore from './stores/useStore.jsx'
 
 export default function Experience() {
+
+    const car = useStore((state) => state.car)
 
     const {envMapIntensity, dirLightStrength, ambientStrength} = useControls("lighting", {
         envMapIntensity: {value: .6, min: 0.0, max: 1.0},
@@ -20,12 +23,12 @@ export default function Experience() {
 
         {/* <Background /> */}
 
-        <Environment background files="./environment/studio.hdr"/>
+        <Environment background={false} files="./environment/studio.hdr"/>
         <Studio />
 
         <directionalLight position={ [ 1, 2, 3 ] } intensity={ dirLightStrength } />
         <ambientLight intensity={ ambientStrength } />
 
-        <Car envMapIntensity={envMapIntensity} model="civic"/>
+        <Car envMapIntensity={envMapIntensity} model={car}/>
     </>
 }

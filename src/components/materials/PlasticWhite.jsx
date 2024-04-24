@@ -3,9 +3,9 @@ import { folder, useControls } from 'leva'
 export default function PlasticWhite(props) {
     const { color, roughness, metalness } = useControls('materials', {
         'plasticWhite': folder({
-            color: '#cbcbcb',
+            color: '#2a2a2a',
             roughness:{
-                value: 0.35,
+                value: 0.6,
                 min: 0,
                 max: 1,
                 step: 0.01
