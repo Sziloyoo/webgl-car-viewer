@@ -9,6 +9,7 @@ import useStore from './stores/useStore.jsx'
 export default function Experience() {
 
     const car = useStore((state) => state.car)
+    const rotate = useStore((state) => state.rotate)
 
     const {envMapIntensity, dirLightStrength, ambientStrength} = useControls("lighting", {
         envMapIntensity: {value: .6, min: 0.0, max: 1.0},
@@ -19,7 +20,7 @@ export default function Experience() {
     return <>
         <Perf position="top-left" />
 
-        <OrbitControls enablePan={false} minPolarAngle={0} maxPolarAngle={Math.PI / 2.25} zoomSpeed={.6} minDistance={3} maxDistance={8} makeDefault />
+        <OrbitControls autoRotate={rotate} enablePan={false} minPolarAngle={0} maxPolarAngle={Math.PI / 2.25} zoomSpeed={.6} minDistance={3} maxDistance={8} makeDefault />
 
         {/* <Background /> */}
 
