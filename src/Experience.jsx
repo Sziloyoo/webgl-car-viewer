@@ -52,7 +52,7 @@ export default function Experience() {
     })
 
     return <>
-        <Perf position="top-left" />
+        {/* <Perf position="top-left" /> */}
 
         <OrbitControls autoRotate={rotate} enablePan={false} minPolarAngle={0} maxPolarAngle={Math.PI / 2.25} zoomSpeed={.6} minDistance={3} maxDistance={8} makeDefault />
 
