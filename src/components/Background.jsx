@@ -1,26 +1,29 @@
 import { Environment } from "@react-three/drei"
 import { folder, useControls } from 'leva'
+import useStore from '../stores/useStore.jsx'
 
 export default function Background() {
+
+    const background = useStore((state) => state.background)
 
     const { height, radius, scale } = useControls('background', {
         'skybox': folder({
             height:{
                 value: 20,
-                min: 10,
-                max: 100,
+                min: 1,
+                max: 128,
                 step: 0.1
             },
             radius:{
                 value: 440,
-                min: 100,
-                max: 1000,
+                min: 32,
+                max: 1024,
                 step: 1
             },
             scale:{
                 value: 10,
-                min: 8,
-                max: 128,
+                min: 1,
+                max: 512,
                 step: 1
             }
         }, {
@@ -30,15 +33,22 @@ export default function Background() {
         collapsed: false
     })
 
+    const params = {
+        'sunrise': {height: 20, radius: 440, scale: 10},
+        'road': {height: 6, radius: 128, scale: 8},
+        'depot': {height: 12, radius: 64, scale: 10}
+    }
+
     return <>
         <Environment
         background
-        ground={ {
+        ground={ params[background] }
+        /* ground={{
             height: height,
             radius: radius,
             scale: scale
-        } }
-        files='./environment/sunrise_2k.hdr'
+        }} */
+        files={'./environment/' + background + '.hdr'}
         />
     </>
 }

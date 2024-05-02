@@ -8,7 +8,7 @@ import Interface from './Interface.jsx'
 const root = ReactDOM.createRoot(document.querySelector('#root')).render(
     <StrictMode>
         <Canvas
-            gl
+            gl={{ preserveDrawingBuffer: true }}
             camera={{
                 fov: 45,
                 near: 0.1,

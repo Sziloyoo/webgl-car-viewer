@@ -1,6 +1,11 @@
 import { folder, useControls } from 'leva'
+import useStore from '../../stores/useStore.jsx'
 
 export default function Carpaint(props) {
+
+    const colors = useStore((state) => state.colors)
+    const colorIndex = useStore((state) => state.colorIndex)
+
     const { color, roughness, metalness, clearcoat, clearcoatRoughness } = useControls('materials', {
         'carpaint': folder({
             color: '#ff0000',
@@ -37,7 +42,7 @@ export default function Carpaint(props) {
     })
 
     return <meshPhysicalMaterial
-        color={ color }
+        color={ colors[colorIndex].color }
         roughness={ roughness }
         metalness={ metalness }
         clearcoat={ clearcoat }

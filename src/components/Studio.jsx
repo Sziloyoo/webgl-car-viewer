@@ -1,5 +1,6 @@
 import { useGLTF, Grid } from "@react-three/drei"
 import { folder, useControls } from "leva"
+import { Environment } from '@react-three/drei'
 
 export default function Studio(){
     const { nodes } = useGLTF('./glb/studio.glb')
@@ -30,9 +31,6 @@ export default function Studio(){
         </mesh>
 
         <Grid position={ [ 0, 1, 0 ] } args={ gridOptions.gridSize } { ...gridOptions } />
-
-        {/* <mesh geometry={ nodes.studio_grid.geometry }>
-          <meshBasicMaterial color="gray"/>
-        </mesh> */}
+        <Environment background={false} files="./environment/studio.hdr"/>
     </group>
 }
