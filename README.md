@@ -1,10 +1,6 @@
 # Interaktív 3D Technológiák a Weben: Dinamikus Modell Megjelenítő Fejlesztése React Three Fiberrel
-Egy webalkalmazás 3D modellek realisztikus bemutatására
 
-### [`ZFTPNS`] Pullai Szilárd - Üzemmérnök-Informatikus BProf ###
-
-- [Szakdolgozat tartalomjegyzék (vázlat)](#szakdolgozat-tartalomjegyzék)
-- [Progress Report - 2023.06.20](#progress-report---20230620)
+![](./docs/demo.png)
 
 ### Setup
 
