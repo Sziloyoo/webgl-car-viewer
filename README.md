@@ -1,4 +1,4 @@
-# 3D Car viewer React Three Fiberrel
+# 3D Car viewer React Three Fiber
 
 ![](./docs/demo.png)
 
